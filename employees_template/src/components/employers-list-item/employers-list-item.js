@@ -6,7 +6,8 @@ class EmployersListItem extends Component{
     constructor(props){
         super(props);
         this.state={
-            increase: false
+            increase: false,
+            star: false
         }
     }
 
@@ -16,16 +17,25 @@ class EmployersListItem extends Component{
         }))
     }
 
+    onStar = () => {
+        this.setState(({star}) => ({
+            star: !star
+        }))
+    }
+
     render() {
         const {name, salary} = this.props;
-        const {increase} = this.state;
+        const {increase, star} = this.state;
         let className = "list-group-item d-flex justify-content-between";
         if(increase){
             className += " increase";
         }
+        if(star){
+            className += " like";
+        }
         return (
             <li className={className}>
-                <span className="list-group-item-label">{name}</span>
+                <span className="list-group-item-label" onClick={this.onStar}>{name}</span>
                 <input type="text" className="list-group-item-input" defaultValue={salary + "$"}/>
                 <div className='d-flex justify-content-center align-items-center'>
                     <button type="button"
