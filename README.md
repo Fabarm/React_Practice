@@ -1,1 +1,1 @@
-# React_Practice
+Pet project on ReactJS
