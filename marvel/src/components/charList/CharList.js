@@ -17,13 +17,13 @@ const CharList = (props) => {
 
     useEffect(()=>{
         onRequest(offset, true);
-    }, [])
+    }, []);
 
     const onRequest = (offset, initial) => {
         initial ? setNewItemLoading(false) : setNewItemLoading(true);
         getAllCharacters(offset)
             .then(onCharListLoaded)
-    }
+    };
 
     const onCharListLoaded = (newCharList) => {
         let ended = false;
@@ -35,7 +35,7 @@ const CharList = (props) => {
         setNewItemLoading(newItemLoading => false);
         setOffset(offset => offset + 9);
         setCharEnded(charEnded => ended);
-    }
+    };
 
     const itemRefs = useRef([]);
 
@@ -44,7 +44,7 @@ const CharList = (props) => {
         itemRefs.current.forEach(item => item.classList.remove('char__item_selected'));
         itemRefs.current[id].classList.add('char__item_selected');
         itemRefs.current[id].focus();
-    }
+    };
 
    function renderItems(arr) {
         const items =  arr.map((item, i) => {

@@ -11,20 +11,20 @@ const SingleComicPage = () => {
     const {comicId} = useParams();
     const [comic, setComic] = useState(null);
     const {loading, error, getComic, clearError} = useMarvelService();
-
+// eslint-disable-next-line
     useEffect(() => {
-        updateComic()
-    }, [comicId])
+        updateComic();
+    }, [comicId]);
 
     const updateComic = () => {
         clearError();
         getComic(comicId)
             .then(onComicLoaded)
-    }
+    };
 
     const onComicLoaded = (comic) => {
         setComic(comic);
-    }
+    };
 
     const errorMessage = error ? <ErrorMessage/> : null;
     const spinner = loading ? <Spinner/> : null;

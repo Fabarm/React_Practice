@@ -17,13 +17,13 @@ const ComicsList = () => {
 
     useEffect(() => {
         onRequest(offset, true);
-    }, [])
+    }, []);
 
     const onRequest = (offset, initial) => {
         initial ? setnewItemLoading(false) : setnewItemLoading(true);
         getAllComics(offset)
             .then(onComicsListLoaded)
-    }
+    };
 
     const onComicsListLoaded = (newComicsList) => {
         let ended = false;

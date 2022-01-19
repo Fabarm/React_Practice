@@ -15,7 +15,7 @@ const CharInfo = (props) => {
 
     useEffect(() => {
         updateChar()
-    }, [props.charId])
+    }, [props.charId]);
 
     const updateChar = () => {
         const {charId} = props;
@@ -26,11 +26,11 @@ const CharInfo = (props) => {
         clearError();
         getCharacter(charId)
             .then(onCharLoaded)
-    }
+    };
 
     const onCharLoaded = (char) => {
         setChar(char);
-    }
+    };
     
     const skeleton =  char || loading || error ? null : <Skeleton/>
     const errorMassage = error ? <ErrorMessage/> : null;
