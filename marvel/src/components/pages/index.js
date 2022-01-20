@@ -1,5 +1,5 @@
 import MainPage from "./MainPage";
-import SingleComicPage from "./SingleComicPage";
+import SingleComicPage from "./SinglePage";
 import Page404 from "./Page404";
 import ComicsPage from "./ComicsPage";
 
