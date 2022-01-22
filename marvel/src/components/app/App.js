@@ -12,7 +12,6 @@ const SingleCharacterLayout = lazy(() => import('../pages/singleCharacterLayout/
 const SinglePage  = lazy(() => import('../pages/SinglePage'));
 
 const App = () => {
-
     return (
         <Router>
             <div className="app">
@@ -20,15 +19,25 @@ const App = () => {
                 <main>
                     <Suspense fallback={<Spinner/>}>
                         <Routes>
-                            <Route end path='/' element={<MainPage/>}/>
-                            <Route end path='/comics' element={<ComicsPage/>}/>
-                            <Route end
-                                   path='/comics/:id'
-                                   element={<SinglePage Component={SingleComicLayout} dataType='comic'/>}/>
-                            <Route end
-                                   path='/characters/:id'
-                                   element={<SinglePage Component={SingleCharacterLayout} dataType='character'/>}/>
-                            <Route path='*' element={<Page404/>}/>
+                            <Route
+                                end
+                                path='/'
+                                element={<MainPage/>}/>
+                            <Route
+                                end
+                                path='/comics'
+                                element={<ComicsPage/>}/>
+                            <Route
+                                end
+                                path='/comics/:id'
+                                element={<SinglePage Component={SingleComicLayout} dataType='comic'/>}/>
+                            <Route
+                                end
+                                path='/characters/:id'
+                                element={<SinglePage Component={SingleCharacterLayout} dataType='character'/>}/>
+                            <Route
+                                path='*'
+                                element={<Page404/>}/>
                         </Routes>
                     </Suspense>
                 </main>

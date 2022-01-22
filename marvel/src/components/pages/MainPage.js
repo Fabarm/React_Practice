@@ -10,7 +10,6 @@ import ErrorBoundary from "../errorBoundary/ErrorBoundary";
 import decoration from '../../resources/img/vision.png';
 
 const MainPage = () => {
-
     const [selectedChar, setChar] = useState(null);
 
     const onCharSelected = (id) => {

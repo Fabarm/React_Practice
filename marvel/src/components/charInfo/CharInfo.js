@@ -7,7 +7,6 @@ import setContent from '../../utils/setContent';
 import './charInfo.scss';
 
 const CharInfo = (props) => {
-
     const [char, setChar] = useState(null);
 
     const {getCharacter, clearError, process, setProcess} = useMarvelService();
