@@ -23,9 +23,6 @@ const HeroesList = () => {
         // eslint-disable-next-line
     }, []);
 
-    // Функция берет id и по нему удаляет ненужного персонажа из store
-    // ТОЛЬКО если запрос на удаление прошел успешно
-    // Отслеживайте цепочку действий actions => reducers
     const onDelete = useCallback((id) => {
         // Удаление персонажа по его id
         request(`http://localhost:3001/heroes/${id}`, "DELETE")
