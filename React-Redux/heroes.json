@@ -17,6 +17,12 @@
       "name": "Морской герой",
       "description": "Как аквамен, но не из DC",
       "element": "water"
+    },
+    {
+      "id": "cf819d9a-950a-427c-9b21-72cb9aa275c2",
+      "name": "Fabarm XLR",
+      "description": "qwertyasdfg",
+      "element": "earth"
     }
   ],
   "filters": [
