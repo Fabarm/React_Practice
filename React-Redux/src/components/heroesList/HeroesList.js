@@ -3,7 +3,7 @@ import { useEffect, useCallback } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { CSSTransition, TransitionGroup} from 'react-transition-group';
 
-import {heroDeleted, fetchHeroes} from "./heroesSlice";
+import { heroDeleted, fetchHeroes, filteredHeroesSelector } from './heroesSlice';
 
 import HeroesListItem from "../heroesListItem/HeroesListItem";
 import Spinner from '../spinner/Spinner';
@@ -11,15 +11,7 @@ import Spinner from '../spinner/Spinner';
 import './heroesList.scss';
 
 const HeroesList = () => {
-
-    const filteredHeroes = useSelector(state => {
-        if (state.filters.activeFilter === 'all') {
-            return state.heroes.heroes;
-        } else {
-            return state.heroes.heroes.filter(item => item.element === state.filters.activeFilter)
-        }
-    })
-
+    const filteredHeroes = useSelector(filteredHeroesSelector);
     const heroesLoadingStatus = useSelector(state => state.heroes.heroesLoadingStatus);
     const dispatch = useDispatch();
     const {request} = useHttp();
@@ -30,7 +22,6 @@ const HeroesList = () => {
     }, []);
 
     const onDelete = useCallback((id) => {
-        // Удаление персонажа по его id
         request(`http://localhost:3001/heroes/${id}`, "DELETE")
             .then(data => console.log(data, 'Deleted'))
             .then(dispatch(heroDeleted(id)))

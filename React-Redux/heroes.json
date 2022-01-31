@@ -7,46 +7,51 @@
       "element": "fire"
     },
     {
-      "id": "da6fac6e-a153-4ef5-9d61-78f9a51fcd36",
+      "id": 2,
       "name": "Неизвестный герой",
       "description": "Скрывающийся в тени",
       "element": "wind"
     },
     {
-      "id": "7eaeb266-2fc6-4009-9f94-576781cc4b9d",
+      "id": 3,
       "name": "Морской герой",
       "description": "Как аквамен, но не из DC",
       "element": "water"
     },
     {
-      "id": "cf819d9a-950a-427c-9b21-72cb9aa275c2",
+      "id": "ef32ad4c-e21b-4f56-ad96-e5448a368665",
       "name": "Fabarm XLR",
-      "description": "qwertyasdfg",
+      "description": "Земляное чудовище",
       "element": "earth"
     }
   ],
   "filters": [
     {
+      "id": "all",
       "name": "all",
       "label": "Все",
       "className": "btn-outline-dark"
     },
     {
+      "id": "fire",
       "name": "fire",
       "label": "Огонь",
       "className": "btn-danger"
     },
     {
+      "id": "water",
       "name": "water",
       "label": "Вода",
       "className": "btn-primary"
     },
     {
+      "id": "wind",
       "name": "wind",
       "label": "Ветер",
       "className": "btn-success"
     },
     {
+      "id": "earth",
       "name": "earth",
       "label": "Земля",
       "className": "btn-secondary"
